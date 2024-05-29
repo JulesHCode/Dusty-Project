@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifier Informations</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the external CSS file -->
+</head>
+<body>
+    <input type="checkbox" id="toggle-checkbox" class="toggle-checkbox">
+    <div class="container">
+        <div class="info-card">
+            <h2>Mes informations</h2>
+            <div class="info-item">
+                <span>Nom :</span>
+                <input type="text" class="input-field" value="Nom">
+            </div>
+            <div class="info-item">
+                <span>Prénom :</span>
+                <input type="text" class="input-field" value="Prénom">
+            </div>
+            <div class="info-item">
+                <span>Date de naissance :</span>
+                <input type="text" class="input-field" value="Date de naissance">
+            </div>
+            <div class="info-item">
+                <span>Mail :</span>
+                <input type="text" class="input-field" value="Mail">
+            </div>
+            <div class="info-item">
+                <span>Téléphone :</span>
+                <input type="text" class="input-field" value="Téléphone">
+            </div>
+            <div class="info-item">
+                <span>Adresse :</span>
+                <input type="text" class="input-field" value="Adresse">
+            </div>
+            <div class="button-container">
+                <label for="toggle-checkbox" class="modify-button">Modifier</label>
+            </div>
+        </div>
+        <div class="info-card">
+            <h2>Mes licences</h2>
+            <div class="info-item">
+                <span>Numéro licence FFA :</span>
+                <input type="text" class="input-field" value="Numéro licence FFA">
+            </div>
+            <div class="info-item">
+                <span>Qualification :</span>
+                <input type="text" class="input-field" value="Qualification">
+            </div>
+            <div class="button-container">
+                <label for="toggle-checkbox" class="modify-button">Modifier</label>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.input-field').forEach(input => {
+            input.addEventListener('focus', () => {
+                if (input.value === input.defaultValue) {
+                    input.value = '';
+                }
+            });
+            input.addEventListener('blur', () => {
+                if (input.value === '') {
+                    input.value = input.defaultValue;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
