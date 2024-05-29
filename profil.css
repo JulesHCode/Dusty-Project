@@ -76,5 +76,5 @@ body {
 }
 
 .toggle-checkbox:checked ~ .container .info-card .info-item .input-field {
-    display: inline-block;
+    display: inline-block; /* Affiche les champs de saisie lorsque Modifier est cochée */
 }
