@@ -4,38 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dusty Club</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #D8D8D8;
-            margin: 0; 
-        }
-        .navbar-custom {
-            background-color: #ff7f00;
-        }
-        .navbar-custom .nav-link {
-            color: white;
-            font-weight: bold;
-        }
-        .header-image {
-            background-size: cover;
-            background-position: center;
-            height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0; 
-            padding: 0; 
-        }
-        .header-image img {
-            width: 100%; 
-            height: auto;
-        }
-        .header-title {
-            color: white;
-            font-size: 2rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-        }
-    </style>
+    <link href="styles.css" rel="stylesheet">
 </head>
 <body>
     <div class="header-image">
@@ -75,34 +44,38 @@
 
     <!-- Formulaire de Réservation -->
     <div class="container mt-5">
-        <h2>Réservation</h2>
-        <form>
-            <div class="form-group">
-                <label for="immatriculation">Immatriculation</label>
-                <select class="form-control" id="immatriculation">
-                    {% for immat in immatriculations %}
-                        <option value="{{ immat.id }}">{{ immat.immat }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="heureDepart">Heure de départ</label>
-                <input type="time" class="form-control" id="heureDepart">
-            </div>
-            <div class="form-group">
-                <label for="heureFin">Heure de fin</label>
-                <input type="time" class="form-control" id="heureFin">
-            </div>
-            <div class="form-group">
-                <label for="instructeur">Instructeur</label>
-                <select class="form-control" id="instructeur">
-                    {% for instructeur in instructeurs %}
-                        <option value="{{ instructeur.id }}">{{ instructeur.nom }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-            <button type="submit" class="btn btn-primary">Valider</button>
-        </form>
+        <div class="form-container-title">
+            <h2>Réservation</h2>
+        </div>
+        <div class="form-container">
+            <form>
+                <div class="form-group">
+                    <label for="immatriculation">Immatriculation</label>
+                    <select class="form-control" id="immatriculation">
+                        {% for immat in immatriculations %}
+                            <option value="{{ immat.id }}">{{ immat.immat }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="heureDepart">Heure de départ</label>
+                    <input type="time" class="form-control" id="heureDepart">
+                </div>
+                <div class="form-group">
+                    <label for="heureFin">Heure de fin</label>
+                    <input type="time" class="form-control" id="heureFin">
+                </div>
+                <div class="form-group">
+                    <label for="instructeur">Instructeur</label>
+                    <select class="form-control" id="instructeur">
+                        {% for instructeur in instructeurs %}
+                            <option value="{{ instructeur.id }}">{{ instructeur.nom }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-blue">Valider</button>
+            </form>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -110,3 +83,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+
+
+
