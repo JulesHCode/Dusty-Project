@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-card {
+    background-color: #d69d7c;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: width 0.3s ease; /* Add transition for smooth width change */
+}
+
+.info-card h2 {
+    margin-top: 0;
+    color: white;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0;
+    flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+.input-field {
+    margin-left: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex-grow: 1; /* Allow the input field to grow and fill available space */
+    display: none; /* Hidden by default */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.modify-button {
+    background-color: #d1885c;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    width: 100px; /* Adjust button width */
+}
+
+.modify-button:hover {
+    background-color: #c07b52;
+}
+
+/* CSS for checkbox trick */
+.toggle-checkbox {
+    display: none;
+}
+
+.toggle-checkbox:checked ~ .container .info-card {
+    width: 400px; /* Expand the width of the info-card when checked */
+}
+
+.toggle-checkbox:checked ~ .container .info-card .info-item .input-field {
+    display: inline-block;
+}
