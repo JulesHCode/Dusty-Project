@@ -1,0 +1,30 @@
+body {
+    background-color: #D8D8D8;
+    margin: 0;
+}
+.navbar-custom {
+    background-color: #ff7f00;
+}
+.navbar-custom .nav-link {
+    color: white;
+    font-weight: bold;
+}
+.header-image {
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0; 
+    padding: 0;
+}
+.header-image img {
+    width: 100%; 
+    height: auto;
+}
+.header-title {
+    color: white;
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
