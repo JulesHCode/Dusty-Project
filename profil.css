@@ -72,7 +72,7 @@ body {
 }
 
 .toggle-checkbox:checked ~ .container .info-card {
-    width: 400px; //agrandit la case quand on clique sur Modifier//
+    width: 400px; /* agrandit la case quand on clique sur Modifier */
 }
 
 .toggle-checkbox:checked ~ .container .info-card .info-item .input-field {
