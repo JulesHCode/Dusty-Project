@@ -20,7 +20,7 @@ body {
     border-radius: 10px;
     width: 300px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: width 0.3s ease; /* Add transition for smooth width change */
+    transition: width 0.3s ease; 
 }
 
 .info-card h2 {
@@ -33,7 +33,7 @@ body {
     justify-content: space-between;
     align-items: center;
     margin: 5px 0;
-    flex-wrap: nowrap; /* Prevent wrapping */
+    flex-wrap: nowrap; 
 }
 
 .input-field {
@@ -41,8 +41,8 @@ body {
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    flex-grow: 1; /* Allow the input field to grow and fill available space */
-    display: none; /* Hidden by default */
+    flex-grow: 1; 
+    display: none; 
 }
 
 .button-container {
@@ -59,20 +59,20 @@ body {
     color: white;
     cursor: pointer;
     text-align: center;
-    width: 100px; /* Adjust button width */
+    width: 100px; 
 }
 
 .modify-button:hover {
     background-color: #c07b52;
 }
 
-/* CSS for checkbox trick */
+
 .toggle-checkbox {
     display: none;
 }
 
 .toggle-checkbox:checked ~ .container .info-card {
-    width: 400px; /* Expand the width of the info-card when checked */
+    width: 400px; //agrandit la case quand on clique sur Modifier//
 }
 
 .toggle-checkbox:checked ~ .container .info-card .info-item .input-field {
