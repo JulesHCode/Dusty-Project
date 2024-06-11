@@ -3,203 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dusty Club</title>
+    <title>Profil - Dusty Club</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background-color: #D8D8D8;
-            margin: 0; /* Supprime les marges par défaut du corps */
             font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .navbar-custom {
-            background-color: #ff7f00;
-            width: 100%; /* Fait en sorte que le bandeau occupe toute la largeur */
-        }
-        .navbar-custom .nav-link {
-            color: white;
-            font-weight: bold;
-        }
-        .header-image {
-            background-size: cover;
-            background-position: center;
-            height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0; /* Supprime les marges de l'élément */
-            padding: 0; /* Supprime les paddings de l'élément */
-            width: 100%; /* Fait en sorte que l'image occupe toute la largeur */
-        }
-        .header-image img {
-            width: 100%; /* S'assure que l'image s'étend sur toute la largeur */
-            height: auto;
-        }
-        .header-title {
-            color: white;
-            font-size: 2rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
         }
         .container {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            align-items: center;
-            margin-top: 20px; /* Ajoute une marge entre le bandeau et la partie inférieure */
+            max-width: 800px;
+            margin: 20px auto;
         }
-        .info-card {
-            background-color: #d69d7c;
+        .box {
+            background-color: #f7b78b;
             padding: 20px;
             border-radius: 10px;
-            width: 300px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: width 0.3s ease;
+            margin-bottom: 20px;
         }
-        .info-card h2 {
+        .box h2 {
             margin-top: 0;
+        }
+        .box table {
+            width: 100%;
+        }
+        .box table td {
+            padding: 5px 0;
+        }
+        .box .btn {
+            background-color: #ff7f00;
             color: white;
-        }
-        .info-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 5px 0;
-            flex-wrap: nowrap;
-        }
-        .input-field {
-            margin-left: 10px;
-            padding: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            flex-grow: 1;
-            display: none;
-        }
-        .button-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        .modify-button {
-            background-color: #d1885c;
             border: none;
-            padding: 10px;
             border-radius: 5px;
-            color: white;
+            padding: 10px 20px;
+            margin-top: 10px;
             cursor: pointer;
-            text-align: center;
-            width: 100px;
         }
-        .modify-button:hover {
-            background-color: #c07b52;
-        }
-        .toggle-checkbox {
-            display: none;
-        }
-        .toggle-checkbox:checked ~ .container .info-card {
-            width: 400px;
-        }
-        .toggle-checkbox:checked ~ .container .info-card .info-item .input-field {
-            display: inline-block;
-        }
-        .input-field:focus:invalid {
-            display: none;
-        }
-        .toggle-checkbox:checked ~ .container .info-card .info-item .input-field:focus:invalid {
-            display: inline-block;
-        }
-        .toggle-checkbox:checked ~ .container .info-card .info-item input:focus:valid {
-            display: inline-block;
+        .box .btn:hover {
+            background-color: #e56e00;
         }
     </style>
 </head>
 <body>
-    <div class="header-image">
-        <img src="https://i.postimg.cc/KjRBgXM6/image-haute-large.jpg" alt="Disney Club">
-    </div>
-    <nav class="navbar navbar-expand-lg navbar-custom">
-        <div class="container">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Accueil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Présentation</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Informations</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Flottes</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Inscription</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Connexion</a>
-                    </li>
-                </ul>
-            </div>
+    <div class="container">
+        <div class="box">
+            <h2>Mes informations</h2>
+            <table>
+                <tr>
+                    <td>Nom :</td>
+                    <td>{{ user.nom }}</td>
+                </tr>
+                <tr>
+                    <td>Prénom :</td>
+                    <td>{{ user.prenom }}</td>
+                </tr>
+                <tr>
+                    <td>Date de naissance :</td>
+                    <td>{{ user.date_naissance }}</td>
+                </tr>
+                <tr>
+                    <td>Mail :</td>
+                    <td>{{ user.mail }}</td>
+                </tr>
+                <tr>
+                    <td>Téléphone :</td>
+                    <td>{{ user.telephone }}</td>
+                </tr>
+                <tr>
+                    <td>Adresse :</td>
+                    <td>{{ user.adresse }}</td>
+                </tr>
+            </table>
         </div>
-    </nav>
-    <div>
-        <input type="checkbox" id="toggle-checkbox" class="toggle-checkbox">
-        <div class="container">
-            <div class="info-card">
-                <h2>Mes informations</h2>
-                <div class="info-item">
-                    <span>Nom :</span>
-                    <input type="text" class="input-field" placeholder="Nom" required>
-                </div>
-                <div class="info-item">
-                    <span>Prénom :</span>
-                    <input type="text" class="input-field" placeholder="Prénom" required>
-                </div>
-                <div class="info-item">
-                    <span>Date de naissance :</span>
-                    <input type="text" class="input-field" placeholder="Date de naissance" required>
-                </div>
-                <div class="info-item">
-                    <span>Mail :</span>
-                    <input type="text" class="input-field" placeholder="Mail" required>
-                </div>
-                <div class="info-item">
-                    <span>Téléphone :</span>
-                    <input type="text" class="input-field" placeholder="Téléphone" required>
-                </div>
-                <div class="info-item">
-                    <span>Adresse :</span>
-                    <input type="text" class="input-field" placeholder="Adresse" required>
-                </div>
-                <div class="button-container">
-                    <label for="toggle-checkbox" class="modify-button">Modifier</label>
-                </div>
-            </div>
-            <div class="info-card">
-                <h2>Mes licences</h2>
-                <div class="info-item">
-                    <span>Numéro licence FFA :</span>
-                    <input type="text" class="input-field" placeholder="Numéro licence FFA" required>
-                </div>
-                <div class="info-item">
-                    <span>Qualification :</span>
-                    <input type="text" class="input-field" placeholder="Qualification" required>
-                </div>
-                <div class="button-container">
-                    <label for="toggle-checkbox" class="modify-button">Modifier</label>
-                </div>
-            </div>
+        <div class="box">
+            <h2>Mes licences</h2>
+            <table>
+                <tr>
+                    <td>Numéro licence :</td>
+                    <td>{{ user.numero_licence }}</td>
+                </tr>
+                <tr>
+                    <td>Qualification :</td>
+                    <td>{{ user.qualification }}</td>
+                </tr>
+            </table>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
