@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .info-card {
+            background-color: #d69d7c;
+            padding: 30px;
+            border-radius: 10px;
+            width: 500px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .info-card h2 {
+            margin-top: 0;
+            color: white;
+            background-color: #c07b52;
+            padding: 10px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center; /* Center the form items */
+        }
+
+        .info-item {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%; /* Make sure the items take full width */
+        }
+
+        .info-item label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .input-field,
+        .info-item input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%; /* Ensure the input fields are 100% width of their container */
+            box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #d1885c;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #c07b52;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="info-card">
+            <h2>Inscription</h2>
+            <form>
+                <div class="info-item">
+                    <label for="nom">Nom :</label>
+                    <input type="text" id="nom" placeholder="Nom">
+                </div>
+                <div class="info-item">
+                    <label for="prenom">Prénom :</label>
+                    <input type="text" id="prenom" placeholder="Prénom">
+                </div>
+                <div class="info-item">
+                    <label for="date">Date de naissance :</label>
+                    <input type="text" id="date" placeholder="Date de naissance">
+                </div>
+                <div class="info-item">
+                    <label for="mail">Mail :</label>
+                    <input type="text" id="mail" placeholder="Mail">
+                </div>
+                <div class="info-item">
+                    <label for="licence">Licence :</label>
+                    <input type="text" id="licence" placeholder="Licence">
+                </div>
+                <div class="info-item">
+                    <label for="telephone">Téléphone :</label>
+                    <input type="text" id="telephone" placeholder="Téléphone">
+                </div>
+                <div class="info-item">
+                    <label for="motdepasse">Mot de passe :</label>
+                    <input type="password" id="motdepasse" placeholder="Mot de passe">
+                </div>
+                <div class="button-container">
+                    <button type="submit">Valider</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
