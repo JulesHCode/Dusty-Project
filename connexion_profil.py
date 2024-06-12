@@ -46,7 +46,6 @@ def verif_connexion():
 @ app.route("/profil")
 def profil():  
     user_id = session.get('user_id')
-    print(user_id)
     if user_id:
         connection = createConnexion()
         cursor = connection.cursor(dictionary=True)
