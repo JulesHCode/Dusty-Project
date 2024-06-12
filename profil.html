@@ -87,24 +87,21 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Accueil</a>
+                        <a class="nav-link" href="#">Mon profil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Présentation</a>
+                        <a class="nav-link" href="#">Planning</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Informations</a>
+                        <a class="nav-link" href="#">Statut des avions</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Flottes</a>
+                        <a class="nav-link" href="#">Rechargement</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Inscription</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Connexion</a>
+                        <a class="nav-link" href="#">Déconnexion</a>
                     </li>
                 </ul>
             </div>
@@ -133,24 +130,20 @@
                 </tr>
                 <tr>
                     <td>Téléphone :</td>
-                    <td>{{ user.telephone }}</td>
+                    <td>{{ user.num_tel }}</td>
                 </tr>
                 <tr>
                     <td>Adresse :</td>
-                    <td>{{ user.adresse }}</td>
+                    <td>{{ user.commune }}</td>
                 </tr>
             </table>
         </div>
         <div class="box">
-            <h2>Mes licences</h2>
+            <h2>Licence</h2>
             <table>
                 <tr>
                     <td>Numéro licence :</td>
-                    <td>{{ user.numero_licence }}</td>
-                </tr>
-                <tr>
-                    <td>Qualification :</td>
-                    <td>{{ user.qualification }}</td>
+                    <td>{{ user.licence }}</td>
                 </tr>
             </table>
         </div>
