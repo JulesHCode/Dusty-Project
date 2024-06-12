@@ -6,8 +6,8 @@
     <title>Profil - Dusty Club</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        {
-    background-color: #D8D8D8;
+        body{
+    background-color: #D8D8D8 !important ;
     margin: 0; /* Supprime les marges par défaut du corps */
 }
 .navbar-custom {
@@ -96,7 +96,7 @@
                         <a class="nav-link" href="#">Statut des avions</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Rechargement</a>
+                        <a class="nav-link" href="/rechargement">Rechargement</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
@@ -147,7 +147,7 @@
                 </tr>
                 <tr>
                     <td>Solde :</td>
-                    <td>{{ user.solde }}</td>
+                    <td>{{user.solde }}</td>
                 </tr>
             </table>
         </div>
