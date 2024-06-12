@@ -47,15 +47,33 @@ def verif_connexion():
 def profil():  
     user_id = session.get('user_id')
     if user_id:
-        connection = createConnexion()
-        cursor = connection.cursor(dictionary=True)
+        cnx = createConnexion()
+        cursor = cnx.cursor(dictionary=True)
         cursor.execute("SELECT nom, prenom, date_naissance, mail, num_tel, commune, licence,solde FROM adherent WHERE licence=%s", (user_id,))
         user_data = cursor.fetchone()
         cursor.close()
-        connection.close()
+        cnx.close()
         return render_template('profil.html', user=user_data)
     else:
         return redirect(url_for('connexion'))
+
+  
+@app.route("/rechargement", methods=["GET","POST"] )
+def rechargement():
+    if request.method == "POST":
+        solde=request.form["solde"]
+        user_id = session.get('user_id')
+        if user_id:
+            cnx = createConnexion()
+            cursor = cnx.cursor()
+            cursor.execute("UPDATE adherent SET solde = solde + %s WHERE licence = %s", (solde, user_id))
+            cnx.commit()
+            cursor.close()
+            cnx.close()
+            return redirect(url_for('profil'))
+    return render_template('rechargement.html')
+
         
 if __name__ == "__main__":
     app.run(debug=True)
+
