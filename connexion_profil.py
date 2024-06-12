@@ -50,7 +50,7 @@ def profil():
     if user_id:
         connection = createConnexion()
         cursor = connection.cursor(dictionary=True)
-        cursor.execute("SELECT nom, prenom, date_naissance, mail, num_tel, commune, licence FROM adherent WHERE licence=%s", (user_id,))
+        cursor.execute("SELECT nom, prenom, date_naissance, mail, num_tel, commune, licence,solde FROM adherent WHERE licence=%s", (user_id,))
         user_data = cursor.fetchone()
         cursor.close()
         connection.close()
