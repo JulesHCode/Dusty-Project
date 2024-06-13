@@ -121,10 +121,10 @@
             <h2>Réservation</h2>
         </div>
         <div class="form-container">
-            <form>
+            <form method="POST">
                 <div class="form-group">
                     <label for="immatriculation">Immatriculation</label>
-                    <select class="form-control" id="immatriculation">
+                    <select class="form-control" name="immatriculation">
                         {% for immat in immatriculations %}
                             <option value="{{ immat.id }}">{{ immat.immat }}</option>
                         {% endfor %}
@@ -132,19 +132,19 @@
                 </div>
                 <div class="form-group">
                     <label for="heureDepart">Heure de départ</label>
-                    <input type="time" class="form-control" id="heureDepart">
+                    <input type="time" class="form-control" name="heureDepart">
                 </div>
                 <div class="form-group">
                     <label for="heureFin">Heure de fin</label>
-                    <input type="time" class="form-control" id="heureFin">
+                    <input type="time" class="form-control" name="heureFin">
                 </div>
                 <div class="form-group">
                     <label for="heureFin">Date du vol</label>
-                    <input type="date" class="form-control" id="date">
+                    <input type="date" class="form-control" name="date">
                 </div>
                 <div class="form-group">
                     <label for="instructeur">Instructeur</label>
-                    <select class="form-control" id="instructeur">
+                    <select class="form-control" name="instructeur">
                         {% for instructeur in instructeurs %}
                             <option value="{{ instructeur.id }}">{{ instructeur.nom }}</option>
                         {% endfor %}
