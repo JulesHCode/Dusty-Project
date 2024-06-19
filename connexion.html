@@ -6,11 +6,11 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background-color: #D8D8D8;
+            background-color: #D8D8D8 !important;
             margin: 0;
         }
         .navbar-custom {
-            background-color: #ff7f00;
+            background-color: #D8D8D8;
         }
         .navbar-custom .nav-link {
             color: white;
@@ -35,6 +35,76 @@
             font-size: 2rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
+      body {
+    background-color: #D8D8D8;
+    margin: 0;
+}
+
+.navbar-custom {
+    background-color: #EC873C;
+}
+
+.navbar-custom .nav-link {
+    color: white;
+    font-weight: bold;
+}
+
+.header-image {
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.header-image img {
+    width: 100%;
+    height: auto;
+}
+
+.header-title {
+    color: white;
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.form-container-title {
+    background-color: #E1B18C;
+    padding: 10px;
+    border-radius: 10px 10px 10px 10px;
+    max-width: 400px;
+    margin: auto;
+    margin-bottom: 10px; 
+    text-align: left;
+    color: white;
+}
+
+.form-container {
+    background-color: #E1B18C;
+    padding: 20px;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: auto;
+}
+
+.form-control {
+    width: 100%;
+}
+
+.btn-orange {
+    background-color: #ff7f00; 
+    border: none;
+    width: 100%;
+    margin-top: 10px;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+}
     </style>
 </head>
 <body>
@@ -79,14 +149,14 @@
             <h2>Connexion</h2>
         </div>
         <div class="form-container">
-            <form>
+            <form method="POST">
                 <div class="form-group">
                     <label for="identifiant">Identifiant</label>
-                    <input type="text" class="form-control" id="identifiant" placeholder="Identifiant">
+                    <input type="text" class="form-control" name="identifiant" placeholder="Identifiant">
                 </div>
                 <div class="form-group">
                     <label for="motDePasse">Mot de passe</label>
-                    <input type="password" class="form-control" id="motDePasse" placeholder="Mot de passe">
+                    <input type="password" class="form-control" name="motDePasse" placeholder="Mot de passe">
                 </div>
                 <button type="submit" class="btn btn-orange">Me connecter</button>
             </form>
