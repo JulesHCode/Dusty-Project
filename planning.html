@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planning</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #e8e8e8;
+            font-family: Arial, sans-serif;
+        }
+        .planning-container {
+            background-color: #f7b286;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 50px auto;
+            width: 80%;
+            max-width: 1000px;
+        }
+        .planning-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .planning-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .planning-table th, .planning-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        .planning-table th {
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+
+        .reserved {
+            background-color: brown !important;
+            color: white !important;
+        }
+        .reservation-btn {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #f48240;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="planning-container">
+        <div class="planning-title">Planning</div>
+        <table class="planning-table">
+            <thead>
+                <tr>
+                    <th>Avion</th>
+                    {% for hour in range(8, 22) %}
+                        <th>{{ hour }}h</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% set planes = ['F-CHUP', 'F-DUST', 'F-ISHA', 'F-RISP', 'F-ROCH', 'F-SKIP'] %}
+                {% for plane in planes %}
+                    <tr>
+                        <td>{{ plane }}</td>
+                        {% for hour in range(8, 22) %}
+                            {% set cell_class = "" %}
+                            {% set cell_content = "" %}
+                            {% for res in reservations %}
+                                {% if res.immat == plane and res.heure_debut <= hour < res.heure_fin %}
+                                    {% set cell_class = "reserved" %}
+                                    {% set cell_content = "Réservé" %}
+                                {% endif %}
+                            {% endfor %}
+                            <td class="{{ cell_class }}" data-hour="{{ hour }}" data-plane="{{ plane }}">{{ cell_content }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="#" class="reservation-btn">Mes réservations</a>
+    </div>
+</body>
+</html>
